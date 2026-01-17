@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap test</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+    <!-- Google Font Lato -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        /* font */
+        .accordion {
+            font-family: 'Lato', sans-serif;
+        }
+      
+      
+        /* FAQ Title */
+        .accordion-button {
+            font-weight: 700;
+            font-size: 1rem;
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-button:hover {
+            background-color: #e9ecef;
+        }
+      
+        /* FAQ Answers */
+        .accordion-body {
+            font-weight: 400;
+            font-size: 0.95rem;
+            padding: 1rem 1.5rem;
+            background-color: #ffffff;
+            border-radius: 0 0 8px 8px;
+        }
+
+        /* Arrow */
+        .accordion-icon {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            color: #6c757d;
+        }
+
+        .accordion-button.collapsed .accordion-icon {
+            transform: rotate(0deg);
+        }
+
+        .accordion-button:not(.collapsed) .accordion-icon {
+            transform: rotate(90deg);
+            color: #0d6efd;
+        }
+
+        .accordion-button:not(.collapsed) {
+            color: #0d6efd;
+            background-color: #e7f1ff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .accordion-item {
+            margin-bottom: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Testimonials Enhancements - Professional Styling */
+        .testimonials-title {
+            color: #007bff; /* Professional blue for title */
+            font-weight: 700;
+            font-size: 2rem; /* Reduced from 2.5rem for a more balanced look */
+            text-align: center;
+            margin-bottom: 3rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hover-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .hover-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .carousel-inner .card {
+            border-radius: 15px;
+        }
+
+        .carousel-inner img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 4px solid #007bff; /* Professional blue border */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .customer-name {
+            color: #343a40; /* Dark professional color for names */
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-quote {
+            font-style: italic;
+            color: #495057; /* Subtle gray for quotes */
+            font-size: 1rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 2rem;
+            color: #007bff; /* Professional blue for quotes */
+            position: absolute;
+            top: -10px;
+            left: -20px;
+        }
+
+        .testimonial-quote::after {
+            content: '"';
+            font-size: 2rem;
+            color: #007bff; /* Professional blue for quotes */
+            position: absolute;
+            bottom: -30px;
+            right: -20px;
+        }
+
+        .carousel-indicators {
+            bottom: -50px;
+        }
+
+        .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #6c757d;
+            border: none;
+        }
+
+        .carousel-indicators .active {
+            background-color: #007bff; /* Professional blue for active indicator */
+        }
+
+        /* Contact Form Styling */
+        .contact-form-title {
+            color: #007bff;
+            font-weight: 700;
+            font-size: 2rem; /* Reduced from 2.5rem for a more balanced look */
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .contact-form .form-label {
+            font-weight: 600;
+            color: #343a40;
+        }
+
+        .contact-form .form-control {
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+        }
+
+        .contact-form .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 8px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        /* Simple FAQ Intro Styling */
+        .simple-faq-intro {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar --> 
+<nav class="navbar navbar-expand-lg bg-body-tertiary p-4 shadow-sm">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-primary" href="/">
+        <img src="./asscet/logo.png.jpeg.jpg" class="w-25" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../my-project-main/home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../shop_project-main/shop.html">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../cart-main/cart.html" raria-current="page">
+            Cart
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact/contact.html" raria-current="page">
+            Contact Us
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about-us" raria-current="page">
+            About Us
+          </a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    <!-- FAQ Accordion -->
+    <div class="container py-5">
+        <h2 class="fw-bold mb-4 text-primary">Welcome! (FAQs) - Frequently Asked Questions</h2>
+        <p class="simple-faq-intro text-muted"> <b>We're here to help with your questions and needs.</b></p>
+
+        <div class="accordion" id="accordionExample">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button d-flex justify-content-between align-items-center" type="button" 
+                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        How can I place an order?
+                        <span class="accordion-icon">&#9654;</span>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        You can place an order by selecting the item and adding it to your cart.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button d-flex justify-content-between align-items-center collapsed" type="button" 
+                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Do you offer refunds?
+                        <span class="accordion-icon">&#9654;</span>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Yes, we offer refunds within 14 days of purchase.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button d-flex justify-content-between align-items-center collapsed" type="button" 
+                            data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        How can I contact customer support?
+                        <span class="accordion-icon">&#9654;</span>
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        Use the “Contact Us” page: we respond within 24 hours.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="container my-5">
+      <h2 class="testimonials-title">What Our Customers Say</h2>
+
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="0">
+        <div class="carousel-inner">
+
+          <!-- Carousel Item 1 -->
+          <div class="carousel-item active">
+            <div class="row justify-content-center g-4">
+
+              <div class="col-md-5">
+                <div class="card shadow-sm p-4 text-center hover-card">
+                  <img src="assets/imgs/sondos.jpg" class="rounded-circle mb-3 mx-auto" alt="Photo of Sondos Hesham">
+                  <h5 class="customer-name">Sondos Hesham</h5>
+                  <div class="text-warning mb-2">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                  </div>
+                  <p class="testimonial-quote">"Amazing service! Loved the products and fast delivery."</p>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="card shadow-sm p-4 text-center hover-card">
+                  <img src="assets/imgs/abdelrahman.jpg" class="rounded-circle mb-3 mx-auto" alt="Photo of Abdelrahman Mohamed">
+                  <h5 class="customer-name">Abdelrahman Mohamed</h5>
+                  <div class="text-warning mb-2">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="testimonial-quote">"Great customer support! The team was very helpful."</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Carousel Item 2 -->
+          <div class="carousel-item">
+            <div class="row justify-content-center g-4">
+
+              <div class="col-md-5">
+                <div class="card shadow-sm p-4 text-center hover-card">
+                  <img src="assets/imgs/salem.jpg" class="rounded-circle mb-3 mx-auto" alt="Photo of Salem Islam">
+                  <h5 class="customer-name">Salem Islam</h5>
+                  <div class="text-warning mb-2">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p class="testimonial-quote">"Loved the quality! Packaging was excellent and delivery fast."</p>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="card shadow-sm p-4 text-center hover-card">
+                  <img src="assets/imgs/mona.jpg" class="rounded-circle mb-3 mx-auto" alt="Photo of Mona Khaled">
+                  <h5 class="customer-name">Mona Khaled</h5>
+                  <div class="text-warning mb-2">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                  </div>
+                  <p class="testimonial-quote">"Excellent products and very reliable delivery. Highly recommend!"</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+<!-- Contact Form -->
+<section class="container my-5">
+    <h2 class="contact-form-title">Send your question and we will respond</h2>
+    <form class="contact-form" id="contactForm">
+        <div class="mb-3">
+            <label class="fw-bold d-block">
+                <i class="bi bi-person-fill me-2" style="color: #007bff;"></i>Full Name
+            </label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="fw-bold d-block">
+                <i class="bi bi-envelope-fill me-2" style="color: #007bff;"></i>Email Address
+            </label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="message" class="form-label fw-bold">Please type your question here</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</section>
+<section class="container my-5">
+
+  <h2 class="fw-bold text-primary mb-3">Product Policy & Retrieval Conditions</h2>
+  <p class="text-muted mb-4">
+    Frequently asked questions about our product policies and steps for returning or retrieving products.
+  </p>
+
+  <!-- Q&A 1 -->
+  <div class="card border-0 shadow-sm mb-4" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border-radius: 12px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <div class="card-body p-4">
+      <h5 class="fw-bold mb-3 text-primary" style="font-family: 'Lato', sans-serif; font-size: 1.1rem;">
+        <i class="bi bi-question-circle-fill me-2" style="color: #007bff;"></i>What is your product return policy?
+      </h5>
+      <p class="text-muted mb-0" style="font-family: 'Lato', sans-serif; font-size: 1rem; line-height: 1.6;">
+        You can return any product within 14 days if it is unused and still in its original packaging. We'll process your refund promptly.
+      </p>
+    </div>
+  </div>
+
+  <!-- Q&A 2 -->
+  <div class="card border-0 shadow-sm mb-4" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border-radius: 12px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <div class="card-body p-4">
+      <h5 class="fw-bold mb-3 text-primary" style="font-family: 'Lato', sans-serif; font-size: 1.1rem;">
+        <i class="bi bi-question-circle-fill me-2" style="color: #007bff;"></i>How do I request a product retrieval?
+      </h5>
+      <p class="text-muted mb-0" style="font-family: 'Lato', sans-serif; font-size: 1rem; line-height: 1.6;">
+        Submit a request through the “Contact Us” page and include your order number to start the retrieval process. We'll guide you through the next steps.
+      </p>
+    </div>
+  </div>
+
+  <!-- Q&A 3 -->
+  <div class="card border-0 shadow-sm mb-4" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border-radius: 12px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <div class="card-body p-4">
+      <h5 class="fw-bold mb-3 text-primary" style="font-family: 'Lato', sans-serif; font-size: 1.1rem;">
+        <i class="bi bi-question-circle-fill me-2" style="color: #007bff;"></i>Are all products eligible for return?
+      </h5>
+      <p class="text-muted mb-0" style="font-family: 'Lato', sans-serif; font-size: 1rem; line-height: 1.6;">
+        Some products are non-returnable, such as opened personal care items, custom-made products, or perishable goods. Check your order confirmation for details.
+      </p>
+    </div>
+  </div>
+
+  <!-- Q&A 4 -->
+  <div class="card border-0 shadow-sm mb-4" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); border-radius: 12px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <div class="card-body p-4">
+      <h5 class="fw-bold mb-3 text-primary" style="font-family: 'Lato', sans-serif; font-size: 1.1rem;">
+        <i class="bi bi-question-circle-fill me-2" style="color: #007bff;"></i>How long do I have to request a retrieval?
+      </h5>
+      <p class="text-muted mb-0" style="font-family: 'Lato', sans-serif; font-size: 1rem; line-height: 1.6;">
+        You must request a retrieval within 14 days of delivery. Requests after this period may not be accepted to ensure product quality.
+      </p>
+    </div>
+  </div>
+</section>
+
+  <footer class="text-center p-3 text-lg-start bg-body-tertiary text-muted">
+
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>G7 Mart
+            </h6>
+            <p>
+              Welcome to G7 Mart — your trusted destination for smart and seamless shopping. Find everything you need in
+              one place.
+            </p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="../Faq-project-main/index.html" class="text-reset">
+                FQAS
+              </a>
+            </p>
+            <p>
+              <a href="../shop_project-main/shop.html" class="text-reset">Shop</a>
+            </p>
+            <p>
+              <a href="../about-us/about-us.html" class="text-reset">About US</a>
+            </p>
+            <p>
+              <a href="../contact/contact.html" class="text-reset">Contact US</a>
+            </p>
+          </div>
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              info@g7-mart.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2025 Copyright: G7 Mart
+    </div>
+  </footer>
+</body>
+
+
+    <!-- Bootstrap JS & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      const carousel = new bootstrap.Carousel('#testimonialCarousel', {
+        interval: 3000,
+        ride: 'carousel',
+        wrap: true
+      });
+    </script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

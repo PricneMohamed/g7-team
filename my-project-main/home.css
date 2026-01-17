@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+
+
+
+
+.hero-section {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+/* اللون الأساسي للينكات */
+.navbar .nav-link {
+  color: #007bff !important; /* اللون اللي تحبيه */
+}
+
+/* اللون عند المرور على اللينك */
+.navbar .nav-link:hover {
+  color: #c61010 !important; /* اللون عند hover */
+}
+
+/* اللون للينك النشط (Active) */
+.navbar .nav-link.active {
+  color: #1900d4 !important; /* لون مختلف للصفحة الحالية */
+}
+
+
+
+body{
+  background-color: rgb(255, 252, 252)!important;
+  font-family: 'Lato',sans-serif;
+}
+  
+
+img {
+  transition: transform 0.3s, box-shadow 0.3s; /* حركة سلسة */
+}
+
+img:hover {
+  transform: scale(1.05); /* تكبير خفيف */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2); /* ظل خفيف */
+}
+
+.welcome h1 {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeDown 1s forwards;
+}
+
+@keyframes fadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+   
+ .contact-contact{
+  display: flex;
+  justify-content: flex-start;
+ }
+
+
+.contact-form {
+  width: 900px;
+  margin: 100px auto;
+  margin-left: auto;
+  padding: 15px;
+ 
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.contact-form button {
+  padding: 10px;
+  background: #ff4e4e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #e03c3c;
+}
+
+
+
+
+.offers-highlight li {
+  display: inline-block;
+  margin: 20px 10px;
+  padding: 30px 15px;
+  border-radius: 20px;
+  background: #0bb5cf;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.offers-highlight li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+
+button, .btn {
+  transition: transform 0.3s, box-shadow 0.3s; /* حركة سلسة */
+  cursor: pointer; /* مؤشر اليد عند المرور */
+}
+
+button:hover, .btn:hover {
+  transform: scale(1.05); /* تكبير بسيط */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* إضافة ظل */
+}
+
+
+
+.testimonial-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}

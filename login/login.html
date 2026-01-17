@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: whitesmoke;
+    }
+    button {
+      background-color: turquoise;
+      color: black;
+    }
+    .social-icon i {
+      transition: 0.3s;
+    }
+    .social-icon i:hover {
+      transform: rotate(360deg);
+    }
+    .btn-primary {
+      transition: 0.3s;
+    }
+    .btn-primary:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    .card {
+      border-radius: 15px; /* زوايا مدورة */
+      background: #f9f9f9; /* خلفية فاتحة */
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+    <div class="">
+<nav class="navbar navbar-expand-lg bg-body-tertiary p-4 shadow-sm mb-5 sticky-top mt-1">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-primary" href="/">
+        <img src="./assets/logo.png" class="w-25" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../my-project-main/home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../shop_project-main/shop.html">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../cart-main/cart.html" raria-current="page">
+            Cart
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact/contact.html" raria-current="page">
+            Contact Us
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about-us" raria-current="page">
+            About Us
+          </a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+ <div class="container">
+   <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+     <li class="nav-item" role="presentation">
+       <a class="nav-link active" id="tab-login" data-mdb-pill-init href="#pills-login" role="tab"
+         aria-controls="pills-login" aria-selected="true">Login</a>
+     </li>
+     <li class="nav-item" role="presentation">
+       <a class="nav-link" id="tab-register" data-mdb-pill-init href="#pills-register" role="tab"
+         aria-controls="pills-register" aria-selected="false">Register</a>
+     </li>
+   </ul>
+   
+   <div class="tab-content">
+     <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+       <form>
+         <div class="text-center mb-3">
+           <p>Sign in with:</p>
+           <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+             <i class="fab fa-facebook-f"></i>
+           </button>
+   
+           <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+             <i class="fab fa-google"></i>
+           </button>
+   
+           <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+             <i class="fab fa-twitter"></i>
+           </button>
+   
+           <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+             <i class="fab fa-github"></i>
+           </button>
+         </div>
+   
+         <p class="text-center">or:</p>
+   
+         <!-- Email input -->
+         <div data-mdb-input-init class="form-outline mb-4">
+           <input type="email" id="loginName" class="form-control" />
+           <label class="form-label" for="loginName">Email or username</label>
+         </div>
+   
+         <!-- Password input -->
+         <div data-mdb-input-init class="form-outline mb-4">
+           <input type="password" id="loginPassword" class="form-control" />
+           <label class="form-label" for="loginPassword">Password</label>
+         </div>
+   
+         <!-- 2 column grid layout -->
+         <div class="row mb-4">
+           <div class="col-md-6 d-flex justify-content-center">
+             <!-- Checkbox -->
+             <div class="form-check mb-3 mb-md-0">
+               <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
+               <label class="form-check-label" for="loginCheck"> Remember me </label>
+             </div>
+           </div>
+   
+           <div class="col-md-6 d-flex justify-content-center">
+             <!-- Simple link -->
+             <a href="#!">Forgot password?</a>
+           </div>
+         </div>
+   
+         <!-- Submit button -->
+         <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
+   
+         <!-- Register buttons -->
+         <div class="text-center">
+           <p>Not a member? <a href="#!">Register</a></p>
+         </div>
+       </form>
+     </div>
+     <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+       <form>
+         <div class="text-center mb-3">
+           <p>Sign up with:</p>
+           <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+             <i class="fab fa-facebook-f"></i>
+           </button>
+   
+           <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+             <i class="fab fa-google"></i>
+           </button>
+   
+           <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+             <i class="fab fa-twitter"></i>
+           </button>
+   
+           <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+             <i class="fab fa-github"></i>
+           </button>
+         </div>
+   
+         <p class="text-center">or:</p>
+   
+         <!-- Name input -->
+         <div data-mdb-input-init class="form-outline mb-4">
+           <input type="text" id="registerName" class="form-control" />
+           <label class="form-label" for="registerName">Name</label>
+         </div>
+   
+         <!-- Username input -->
+         <div data-mdb-input-init class="form-outline mb-4">
+           <input type="text" id="registerUsername" class="form-control" />
+           <label class="form-label" for="registerUsername">Username</label>
+         </div>
+   
+         <!-- Email input -->
+         <div data-mdb-input-init class="form-outline mb-4">
+           <input type="email" id="registerEmail" class="form-control" />
+           <label class="form-label" for="registerEmail">Email</label>
+         </div>
+   
+         <!-- Password input -->
+         <div data-mdb-input-init class="form-outline mb-4">
+           <input type="password" id="registerPassword" class="form-control" />
+           <label class="form-label" for="registerPassword">Password</label>
+         </div>
+   
+         <!-- Repeat Password input -->
+         <div data-mdb-input-init class="form-outline mb-4">
+           <input type="password" id="registerRepeatPassword" class="form-control" />
+           <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+         </div>
+   
+         <!-- Checkbox -->
+         <div class="form-check d-flex justify-content-center mb-4">
+           <input class="form-check-input me-2" type="checkbox" value="" id="registerCheck" checked
+             aria-describedby="registerCheckHelpText" />
+           <label class="form-check-label" for="registerCheck">
+             I have read and agree to the terms
+           </label>
+         </div>
+   
+         <!-- Submit button -->
+         <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-3">Sign in</button>
+       </form>
+     </div>
+   </div>
+ </div>
+
+    <footer class="text-center p-3 text-lg-start bg-body-tertiary text-muted">
+
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>G7 Mart
+            </h6>
+            <p>
+              Welcome to G7 Mart — your trusted destination for smart and seamless shopping. Find everything you need in
+              one place.
+            </p>
+          </div>
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="../Faq-project-main/index.html" class="text-reset">
+                FQAS
+              </a>
+            </p>
+            <p>
+              <a href="../shop_project-main/shop.html" class="text-reset">Shop</a>
+            </p>
+            <p>
+              <a href="../about-us/about-us.html" class="text-reset">About US</a>
+            </p>
+            <p>
+              <a href="../contact/contact.html" class="text-reset">Contact US</a>
+            </p>
+          </div>
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              info@g7-mart.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2025 Copyright: G7 Mart
+    </div>
+  </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+/* Login card width */
+.login-card {
+  width: 380px;
+  max-width: 95%;
+}
+
+/* Padding inside card */
+.card-body {
+  padding: 2rem;
+}
+
+/* Message spacing */
+#message .alert {
+  margin-bottom: 0;
+}

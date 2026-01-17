@@ -1,0 +1,75 @@
+.typing {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 150px;
+  white-space: nowrap;   
+  
+}
+.typing {
+  opacity: 0;
+  transform: translateY(-40px);
+  animation: typing 1.5s ease forwards;
+}
+
+@keyframes typing {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.under_text {
+  text-align: center; /* لو عايزاها في النص */
+  margin-top: 100px;   /* المسافة من الكروت اللي فوق */
+  margin-bottom: 200px; /* المسافة تحت الجملة */
+  font-size:40px;     /* حجم الخط */
+  color:steelblue;         /* لون الخط */
+}
+
+
+
+
+.hero-section {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+/* اللون الأساسي للينكات */
+.navbar .nav-link {
+  color: #007bff !important; /* اللون اللي تحبيه */
+}
+
+/* اللون عند المرور على اللينك */
+.navbar .nav-link:hover {
+  color: #c61010 !important; /* اللون عند hover */
+}
+
+/* اللون للينك النشط (Active) */
+.navbar .nav-link.active {
+  color: #1900d4 !important; /* لون مختلف للصفحة الحالية */
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+.card .btn {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card .btn:hover {
+  transform: scale(1.05);
+}
+.card img {
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.08);
+}

@@ -1,0 +1,31 @@
+/* كل منتج في صف */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* المسافة بين الصورة والنص */
+  padding: 15px 0;
+  border-bottom: 1px solid #dde0d9;
+}
+
+/* صورة المنتج */
+.cart-item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* زر حذف المنتج */
+.delete-btn {
+  background-color: #f03232;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.30s;
+}
+.delete-btn:hover {
+  background-color: #ff7875;
+}
+

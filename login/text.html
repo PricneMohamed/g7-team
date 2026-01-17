@@ -1,0 +1,55 @@
+// Select elements
+const loginForm = document.getElementById('loginForm');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const messageDiv = document.getElementById('message');
+
+// Handle form submit
+loginForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // stop page reload
+  messageDiv.innerHTML = ''; // clear old messages
+
+  const emailValid = emailInput.checkValidity();
+  const passwordValid = passwordInput.checkValidity();
+
+  if (!emailValid) {
+    emailInput.classList.add('is-invalid');
+  } else {
+    emailInput.classList.remove('is-invalid');
+  }
+
+  if (!passwordValid) {
+    passwordInput.classList.add('is-invalid');
+  } else {
+    passwordInput.classList.remove('is-invalid');
+  }
+
+  // If both fields are valid
+  if (emailValid && passwordValid) {
+    const emailValue = emailInput.value.trim();
+
+    const successHtml = `<div class="alert alert-success" role="alert">
+      Login successful for <strong>${escapeHtml(emailValue)}</strong>
+    </div>`;
+
+    messageDiv.innerHTML = successHtml;
+
+  } else {
+    const errorHtml = `<div class="alert alert-danger" role="alert">
+      Invalid login information. Please try again.
+    </div>`;
+    messageDiv.innerHTML = errorHtml;
+  }
+});
+
+// Prevent malicious HTML injection
+function escapeHtml(text) {
+  const map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, m => map[m]);
+}
